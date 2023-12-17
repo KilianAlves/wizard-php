@@ -1,5 +1,6 @@
 <?php
 
+namespace Wizard\FormMaker;
 class Glyph {
 
     private string $type;
@@ -25,10 +26,10 @@ class Glyph {
         foreach ($this->constraints as $constraint => $value) {
             // add constraint to input
             $input .= " ".$constraint.'= "'.$value.'"';
+            // TODO: make constraint without value
+            // example "required" don't need a value
         }
         $input .= ">";
         return $input;
     }
 }
-
-?>
