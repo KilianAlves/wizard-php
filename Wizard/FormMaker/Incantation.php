@@ -31,4 +31,20 @@ class Incantation {
         $this->glyphs[] = new Glyph($type, $name, $label, $constraints);
         return $this;
     }
+
+    /**
+     * Render the string of the incantation (HTML form)
+     * @return string
+     */
+    public function renderHTML(): string {
+        $form = "<form name='$this->name' action='$this->action' method='$this->method' enctype='$this->enctype'>";
+
+        // generate glyphs (inputs) of the incantation (form)
+        foreach ($this->glyphs as $glyph) {
+            $form .= $glyph->generateGlyph();
+        }
+
+        $form .= "</form>";
+        return $form;
+    }
 }
