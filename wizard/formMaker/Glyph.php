@@ -2,10 +2,10 @@
 
 class Glyph {
 
-    public string $type;
-    public string $name;
-    public string|bool $label;
-    public array $constraints = [];
+    private string $type;
+    private string $name;
+    private string|bool $label;
+    private array $constraints = [];
     public function __construct(string $type, string $name, string|bool $label = false, array $constraints = []) {
         $this->type = $type;
         $this->name = $name;
